@@ -1,0 +1,14 @@
+<?xml version="1.0" ?>
+<config>
+    <menu>
+        <sales>
+            <children>
+                <zips translate="title" module="delivery">
+                    <title>Delivery Zip Codes</title>
+                    <action>adminhtml/zips/index</action>
+                    <sort_order>300</sort_order>
+                </zips>
+            </children>
+        </sales>
+    </menu>
+</config>

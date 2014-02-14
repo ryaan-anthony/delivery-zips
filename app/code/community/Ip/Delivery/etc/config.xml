@@ -1,0 +1,78 @@
+<?xml version="1.0"?>
+<config>
+    <modules>
+        <Ip_Delivery>
+            <version>0.1.0</version>
+        </Ip_Delivery>
+    </modules>
+
+    <global>
+        <helpers>
+            <delivery>
+                <class>Ip_Delivery_Helper</class>
+            </delivery>
+        </helpers>
+        <blocks>
+            <delivery>
+                <class>Ip_Delivery_Block</class>
+            </delivery>
+        </blocks>
+        <resources>
+            <delivery_setup>
+                <setup>
+                    <module>Ip_Delivery</module>
+                    <class>Mage_Core_Model_Resource_Setup</class>
+                </setup>
+            </delivery_setup>
+        </resources>
+        <models>
+            <delivery_resource>
+                <class>Ip_Delivery_Model_Resource</class>
+                <entities>
+                    <zips>
+                        <table>delivery_zips</table>
+                    </zips>
+                </entities>
+            </delivery_resource>
+            <delivery>
+                <class>Ip_Delivery_Model</class>
+                <resourceModel>delivery_resource</resourceModel>
+            </delivery>
+        </models>
+    </global>
+
+    <adminhtml>
+        <layout>
+            <updates>
+                <delivery>
+                    <file>delivery.xml</file>
+                </delivery>
+            </updates>
+        </layout>
+    </adminhtml>
+
+    <admin>
+        <routers>
+            <adminhtml>
+                <args>
+                    <modules>
+                        <delivery before="Mage_Adminhtml">Ip_Delivery_Adminhtml</delivery>
+                    </modules>
+                </args>
+            </adminhtml>
+        </routers>
+    </admin>
+
+
+    <default>
+        <carriers>
+            <delivery>
+                <active>1</active>
+                <title>Delivery</title>
+                <showmethod>1</showmethod>
+                <specificerrmsg>This shipping method is currently unavailable.</specificerrmsg>
+            </delivery>
+        </carriers>
+    </default>
+
+</config>

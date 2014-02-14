@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+
+<layout>
+    <adminhtml_zips_index>
+        <reference name="content">
+            <block type="delivery/adminhtml_zips" name="zips" />
+        </reference>
+    </adminhtml_zips_index>
+
+    <adminhtml_zips_edit>
+        <reference name="content">
+            <block type="delivery/adminhtml_zips_edit" name="zips_edit" />
+        </reference>
+    </adminhtml_zips_edit>
+
+</layout>

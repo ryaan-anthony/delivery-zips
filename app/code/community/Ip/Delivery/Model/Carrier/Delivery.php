@@ -43,14 +43,15 @@ class Ip_Delivery_Model_Carrier_Delivery extends Mage_Shipping_Model_Carrier_Abs
                 return false;
             }
             //free shipping!
-            if($quote->getShippingAddress()->getFreeShipping()){
+            if($quote->getShippingAddress()->getFreeShipping() &&
+                Mage::getStoreConfig('carriers/'.$this->_code.'/applyfree')){
                 return 0;
             }
             //no rate found
             if(!$rate = $zips->getData('rate')){
                 return false;
             }
-        //invalid zip
+            //invalid zip
         }elseif(strlen($zip_code) > 0){
             return false;
         }
